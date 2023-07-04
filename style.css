@@ -26,10 +26,12 @@ body{
     align-items: stretch;
     min-height: 1vh;
     min-width: 1vh;
+    flex-direction: row;
+    gap: 5px;
 }
 
 .screen-inner {
-    flex: 1;
+    flex: 3;
     background-color: white;
     margin: 15px;
     border-radius: 25px;
@@ -94,5 +96,10 @@ body{
 }
 .screen-inner h1 {
     margin: 1px;
+}
+
+.clear {
+    margin: 15px;
+    border-radius: 25px;
 }
 
