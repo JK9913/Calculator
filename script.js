@@ -35,6 +35,11 @@ digits.forEach ((digit) => {
 const operators = document.querySelectorAll(".key-operator");
 operators.forEach((operator) => {
     operator.addEventListener('click', () => {
+        const display = document.querySelector(".screen-inner > h1");
+        value1 = display.textContent.replace(/\s/g,'');
+        operatorValue = operator.textContent.replace(/\s/g,'');
+        console.log(value1);
+        console.log(operatorValue);
         fillDisplayDigit("");
     })
 })
@@ -51,6 +56,7 @@ const operate = function (operator, number1, number2){
             break;
         case '*':
             return number1 * number2
+            break;
         case '/':
             return number1 / number2
             break;
