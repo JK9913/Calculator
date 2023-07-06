@@ -1,0 +1,7 @@
+1. Each time a button is pressed the display will update
+2. Like a normal calculator one should be able to for example press "12", the "plus" sign, and then when starting to type the second value the display should update to those digits.
+    2.1 This would mean that only two sets of digits will be processed at one time.
+3. There should be two variables which would take of the two values being calculated at one time.
+    3.1 Another variable should contain the operator
+    3.2 A last value should keep the running sum of all the operations.
+4. When the "equals" sign has been pressed, the display should update with the sum.
