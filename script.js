@@ -1,6 +1,6 @@
-let value1 = 0
-let operatorValue = ""
-let value2 = 0
+let value1 = undefined;
+let operatorValue = "";
+let value2 = undefined;
 const equalsButton = document.querySelector(".equals");
 
 
@@ -18,7 +18,15 @@ const fillDisplayDigit = function (number) {
     };
 
 
+// Function for the clear button.
+const clear = function() {
+    value1 = undefined;
+    value2 = undefined;
+    operator = "";
 
+    const display = document.querySelector(".screen-inner > h1");
+    display.textContent = "";
+}
 
 
 // The point here is to select all digits on the keyboard and add a eventlistener to each one.
@@ -36,9 +44,19 @@ const operators = document.querySelectorAll(".key-operator");
 operators.forEach((operator) => {
     operator.addEventListener('click', () => {
         const display = document.querySelector(".screen-inner > h1");
-        value1 = display.textContent.replace(/\s/g,'');
+        // if value1 has already been filled then proceed to value2
+        if (value1) {
+            value2 = display.textContent.replace(/\s/g,'');
+            console.log(value2);
+        }else {
+            value1 = display.textContent.replace(/\s/g,'');
+            console.log(value1);
+        }
+
+      
         operatorValue = operator.textContent.replace(/\s/g,'');
-        console.log(value1);
+        
+        
         console.log(operatorValue);
         fillDisplayDigit("");
     })
@@ -63,7 +81,11 @@ const operate = function (operator, number1, number2){
     }
 } 
 
-
+// Add an eventlistener for the clear button
+const clearButton = document.querySelector(".clear");
+clearButton.addEventListener('click', () => {
+    clear();
+})
 
 
 //
