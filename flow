@@ -1,7 +1,15 @@
-1. Each time a button is pressed the display will update
-2. Like a normal calculator one should be able to for example press "12", the "plus" sign, and then when starting to type the second value the display should update to those digits.
-    2.1 This would mean that only two sets of digits will be processed at one time.
-3. There should be two variables which would take of the two values being calculated at one time.
-    3.1 Another variable should contain the operator
-    3.2 A last value should keep the running sum of all the operations.
-4. When the "equals" sign has been pressed, the display should update with the sum.
+1. Each button pressed should call a functon to update the display with that number
+    1.1 the number is added to the existing content of the display
+2. Each time an operator is being pressed the display clears
+    2.1 The value that is in the display will be saved to value1
+    2.2 If value1 is filled, then value2 will be filled.
+    2.3 If value2 s flled then a calculation of the two values will be   done. This is saved in tempSum, the values must be undefined
+    2.4 (Example 1) The logic continues on and if only one more number is entered after tempSum is filled
+        2.4.1 Logic should be: Whenever the '=' is pressed:
+            check if tempSum exist:
+                check if value1 exists:
+                    use the operator in operatorValue to calculate tempSum and value1
+                    Display to display
+                else (!value1)
+                    display tempSum
+                    
