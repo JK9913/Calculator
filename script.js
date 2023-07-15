@@ -2,6 +2,7 @@ let value1 = undefined;
 let operatorValue = "";
 let value2 = undefined;
 let tempSum = undefined;
+let tempOperator = undefined;
 let SUM = undefined;
 const equalsButton = document.querySelector(".equals");
 
@@ -24,6 +25,7 @@ const fillDisplayDigit = function (number) {
 const clear = function () {
     value1 = undefined;
     value2 = undefined;
+    tempOperator = undefined;
     operator = "";
 
     const display = document.querySelector(".screen-inner > h1");
@@ -51,7 +53,9 @@ operators.forEach((operator) => {
         // First check if operator is equalsbutton
         if (operator.textContent.includes('=')) {
             if (tempSum) {
-                value1 ? SUM = operate(operatorValue, tempSum, value1):SUM = tempSum;
+                value1 ? SUM = operate(tempOperator, tempSum, value1):SUM = tempSum;
+            } else {
+                
             }
         } else {
             // if value1 has already been filled then proceed to value2
@@ -69,6 +73,7 @@ operators.forEach((operator) => {
             } else {
                 value1 = display.textContent.replace(/\s/g, '');
                 operatorValue = operator.textContent.replace(/\s/g, '');
+                tempOperator = operatorValue;
                 console.log(value1);
             }
             console.log(operatorValue);
